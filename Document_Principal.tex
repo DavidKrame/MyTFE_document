@@ -1,0 +1,102 @@
+\documentclass[12pt,twoside,openany]{book}
+\usepackage[T1]{fontenc}
+\usepackage{color}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[toc,page,title,titletoc,header]{appendix}
+\usepackage{babel}
+%\usepackage{supertabular}
+\usepackage{longtable}
+\usepackage{color,colortbl}
+\usepackage[table,dvipsnames]{xcolor}
+%\usepackage[final]{pdfpages}
+\usepackage{subcaption}
+\usepackage{kpfonts}
+\usepackage{setspace}
+\setstretch{1.5}
+\usepackage{fancyhdr}
+\usepackage[clearempty]{titlesec}
+\usepackage{caption}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage[top=25mm,bottom=25mm,left=25mm,right=25mm]{geometry}
+\usepackage[colorlinks=true,breaklinks=true,linkcolor=blue]{hyperref}
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancyhead[LE]{SYNTHESE AUTOMATIQUE DES TEXTES}
+\fancyhead[RO]{\rightmark}
+\fancyhead[RE]{}
+\fancyhead[LO]{}
+\fancyfoot[C]{\thepage\hspace{1pt} sur \pageref{LastPage}}
+%BORDURES POUR LA PAGE DE GARDE
+\definecolor{azuree}{rgb}{0.0,0.5,1.0}
+\newcommand\framethispage[1][1cm]{%
+    \tikz[overlay,remember picture,line width=8pt,color=azuree]
+    \draw([xshift=(#1),yshift=(-#1)]current page.north west)rectangle
+         ([xshift=(-#1),yshift=(#1)]current page.south east);%
+}
+\titleformat{\chapter}[display]
+  {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{25pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{-10mm}{10mm}
+
+\begin{document}
+\begin{titlepage}
+\framethispage[1cm]
+\input{PageGardeCADRE}
+\end{titlepage}
+\renewcommand{\bibname}{Bibliographie}
+\renewcommand{\chaptername}{Chapitre}
+\renewcommand{\appendixtocname}{Annexes}
+\renewcommand{\appendixpagename}{Annexes}
+\renewcommand{\contentsname}{Table des matières}
+\renewcommand{\listfigurename}{Liste des figures}
+\renewcommand{\listtablename}{Liste des tables}
+\frontmatter
+\chapter*{Dédicaces}\addcontentsline{toc}{chapter}{Dédicaces}
+\input{Dedicaces}
+\chapter*{Remerciements}\addcontentsline{toc}{chapter}{Remerciements}
+\input{Remerciements}
+\chapter*{Résumé}\addcontentsline{toc}{chapter}{Résumé}
+\input{Resume}
+\chapter*{Abstract}\addcontentsline{toc}{chapter}{Abstract}
+\input{Abstract}
+\chapter*{Sigles et abréviations}\addcontentsline{toc}{chapter}{Sigles et abréviations}
+\input{Sigles}
+\tableofcontents
+\listoftables
+\listoffigures
+
+\mainmatter
+
+\graphicspath{{./images/}}
+
+\chapter*{Introduction générale}\addcontentsline{toc}{chapter}{Introduction générale}
+\input{Introduction}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\chapter[Généralités sur le NLP]{Généralités sur le traitement automatique du langage naturel}
+\input{ChapterOne}
+\chapter[Résumé automatique et conception]{Présentation du résumé automatique et\\ conception du système \textbf{\textit{Mon Résumeur}}}
+\input{ChapterTwo}
+\chapter{Conception détaillée, réalisation et tests}
+\input{ChapterTree}
+\chapter*{Conclusion générale}\addcontentsline{toc}{chapter}{Conclusion générale}
+\input{Conclusion}
+\backmatter
+%\appendix
+\bibliographystyle{unsrt}
+\bibliography{Bibliographie}
+\backmatter
+%\appendix
+\begin{appendices}
+\section{Exemples des synthèses pour une évaluation qualitative du système}\label{AnnexesExemples}
+\input{AnnexeExemples}\newpage
+\section{Documentation sur les end-points utilisables de l'API}\label{AnnexeDocu}
+\input{AnnexeDocumentation}\newpage
+\section{Captures des interfaces d'authentification de l'API}\label{AnnexeFrontAPI}
+\input{AnnexeFrontendAPI}
+\end{appendices}
+\end{document}

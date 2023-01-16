@@ -1,0 +1,64 @@
+\section{Contexte}
+$ _{} $ $ _{} $ $ _{} $ $ _{} $ $ _{} $A l'ère du numérique, comme depuis l'invention de l'écriture, le texte est l'un des principaux moyens de communication et surtout, de transmission des connaissances.\\
+Des livres aux SMS, en passant par diverses pages web, les données textuelles sont partout.\\
+En $ 2018 $, il s'agissait d'environs $ 80\% $ de l'information qui circulait sur le web \cite{lamsiyah-etal-2018-resume}.\\
+L'évolution de l'informatique continue à démontrer la possibilité de simplifier toujours grandement la vie de l'homme en automatisant de plus en plus l'accomplissement des tâches rébarbatives.\\
+Certaines tâches comme celles liées explicitement à l'arithmétique semblent mieux se prêter à cette vague d'automatisation, les données numériques étant par essence celles prises en compte par les plateformes numériques.\\
+$ _{} $ $ _{} $ $ _{} $ $ _{} $ $ _{} $Néanmoins, des transformations adéquates permettent de prendre en compte tout type de donnée, et le texte n'est pas exclu. C'est ainsi que, des avancées récentes en traitement automatique du langage naturel ont prouvé que le traitement du texte par l'ordinateur peut être raffiné autant qu'on veut, dans les limites du possible.\\
+Cela est en fait une bonne nouvelle car, il s'avère que des nombreux sujets restent fermés à la majorité des gens suite au manque de temps, au regard de la quantité d'informations à consulter pour espérer avoir ne fusse qu'une lueur d'idée du domaine ou du sujet qu'on veut rapidement explorer.\\
+C'est en ce sens que la mise au point des technologies pouvant faciliter l'exploration des connaissances présentées sous forme textuelle est salvatrice.
+\section{Identification et formulation du problème}
+$ _{} $ $ _{} $ $ _{} $ $ _{} $ $ _{} $Comme présenté dans la section précédente, la voie la plus privilégiée pour transmettre les connaissances est l'\textbf{écriture}. Mais, admettons que souvent, dans un long texte, la quantité d'information pertinente est moindre par rapport à la longueur du texte entier.\\
+Comment faire donc pour identifier cette partie utile et gagner ainsi en temps ?\\
+$ _{} $ $ _{} $ $ _{} $ $ _{} $ $ _{} $Il est souvent inintéressant de passer du temps à lire des textes très longs, surtout quand on veut juste avoir une compréhension suffisante en peu de temps de ce qui est écrit, ou quand le sujet traité ne fait pas partie de notre domaine de prédilection. \textbf{Il est donc intéressant de mettre au point un système qui pourra assister l'homme dans la tâche de synthèse des connaissances} afin de promouvoir par là-même un échange entre disciplines, ce qui est souvent très enrichissant. Le système que nous mettrons au point durant ce travail, pour résoudre le problème ici présenté, sera nommé \textbf{\textit{Mon Résumeur}}.
+\section{Questions de recherche}
+$ _{} $ $ _{} $ $ _{} $ $ _{} $ $ _{} $Vu le problème que nous venons de présenter, une question se pose :\\
+\textbf{Est-il possible de mettre au point un système informatique capable de synthétiser les textes avec une performance de niveau humain ?}\\
+La précédente question nous amène aussi à nous demander ceci :
+\begin{itemize}
+\item[•] Un traitement purement linguistique ne pourrait-il pas nous permettre de générer des synthèses suffisamment bonnes pour atteindre notre objectif ?
+\item[•] L'inclusion des traitements basés sur l'intelligence artificielle dans les modules de synthèse est-elle obligatoire pour atteindre des bonnes performances ?
+\item[•] Quelle est l'architecture globale la plus adaptée pour réaliser un système de synthèse automatique performant ?
+\end{itemize}
+\section{Hypothèses de travail}
+$ _{} $ $ _{} $ $ _{} $ $ _{} $ $ _{} $A la suite des questions que nous venons de soulever, nous postulons que :
+\begin{itemize}
+\item[•] Vu la complexité du langage naturel, un traitement purement linguistique ne nous permettrait pas de mettre au point un système de niveau humain en synthèse des textes;
+\item[•] Étant donné que, par définition, le langage naturel est difficile à formaliser com\-plè\-te\-ment, on ne pourrait pas se passer de l'intelligence artificielle pour parvenir à réaliser un système performant;
+\item[•] Une architecture basée essentiellement sur des modèles du type \textit{transformer}, joint à l'utilisation de quelques règles inspirées de la linguistique permettrait d'avoir un système de synthèse performant.
+\end{itemize}
+\section{Justification du choix du sujet et motivations}
+$ _{} $ $ _{} $ $ _{} $ $ _{} $ $ _{} $Pour synthétiser un texte, il faut l'avoir aumoins lu! Et pourtant, pour lire un texte, il faut du temps, une denrée souvent rare.\\
+Certains textes sont souvent fournis, accompagnés des synthèses qui sont parfois très bonnes, parfois incomplètes et parfois même très polarisées ou tout simplement mauvaises.
+Toutefois, avoir une synthèse à la demande serait mieux que de ne trouver que des synthèses de certains textes, sans d'ailleurs en avoir le plus souvent besoin. Nombreux sont des textes (livres, articles, pages web et autres documents) dont on voudrait avoir des bonnes synthèses, qu'on ne trouve que très rarement si on ne s'est pas découragé avant.\\
+C'est la raison pour laquelle, \textbf{nous nous sommes fixé comme objectif de répondre à ce besoin précis en mettant au point une application web de synthèse des textes}.
+$ _{} $ $ _{} $ $ _{} $ $ _{} $ $ _{} $Beaucoup de chercheurs en linguistique et en traitement automatique du langage naturel principalement se sont penchés sur ce sujet \cite{lamsiyah-etal-2018-resume,torres2014automatic,adams2021combining,beaucoup_de_chercheurs2,beaucoup_de_chercheurs3}.\\
+Des solutions ont été proposées mais ne sont pas toujours à la hauteur de nos attentes (mettre au point un système de performance presqu'humaine en synthèse automatique des textes). Les plus prometteuses de ces solutions se limitent à des tailles bien réduites de texte, ce qui est déjà un grand pas mais pas suffisant évidemment. C'est pour cette raison qu'il nous semble pertinent d'étudier cette question en profondeur et de \textbf{mettre au point un système complet et utilisable en dehors du monde de la recherche}.\\
+$ _{} $ $ _{} $ $ _{} $ $ _{} $ $ _{} $Socialement, la mise au point de ce système sera d'une très grande importance. Cela dans plusieurs axes dont principalement :
+\begin{itemize}
+\item[-] Pour les chercheurs, car il pourra faciliter le survol rapide des connaissances provenant des filières liées à leurs domaines, sans être obligés de consulter à l'avance un tas de documents issus de ces domaines connexes;
+\item[-] Pour tout le monde alors, le système pourra permettre un gain de temps considérable chaque fois qu'il donnera la possibilité d'avoir accès à une synthèse de bonne qualité à la demande, en un temps raisonnable.
+\end{itemize}
+\section{Objectifs de la recherche}
+\subsection{Objectif général}
+Cette recherche a pour objectif principal de concevoir et réaliser un système (une ap\-pli\-ca\-tion web) qui permettra la génération automatique des résumés des documents.
+\subsection{Objectifs spécifiques}
+Pour arriver à bout de notre projet nous comptons :
+\begin{itemize}
+\item[•] Évaluer les failles et limites des techniques de synthèse automatique existantes;
+\item[•] Corriger les failles ou compléter les techniques de synthèse automatique existantes;
+\item[•] Établir des architectures logiques optimales pour obtenir des synthèses de qualité;
+\item[•] Élaborer une interface de programmation d'applications devant faciliter l'accès au service de synthèse automatique;
+\item[•] Mettre au point une base de données pour stocker les synthèses les mieux cotées par les usagers, en prévision d'une amélioration future du système;
+\item[•] Réaliser une interface web de qualité pour permettre l'accès au service par divers utilisateurs.
+\end{itemize}\newpage
+\section{Méthodologie de recherche et délimitation du travail}
+$ _{} $ $ _{} $ $ _{} $ $ _{} $ $ _{} $Pour la mise au point du système, nous comptons utiliser les méthodes d'analyse moyennant les techniques expérimentale (pour vérifier l'adéquation du fonctionnement de l'application mise sur pied avec le problème posé), et documentaire (pour une vision approfondie des techniques couramment utilisées et d'éventuelles améliorations nécessaires).
+$ _{} $ $ _{} $ $ _{} $ $ _{} $ $ _{} $Ce travail se focalise sur la synthèse des documents du type informationnel (livres historiques, discours, articles de presse, lettres, nouvelles, romans et tout autre type de document ayant une faible densité d'expressions mathématiques) et il s'agira d'une synthèse mono-document \textbf{en langue française}.
+\section{Subdivision du travail}
+Excepté l'introduction et la conclusion générales, ce travail est ainsi constitué :
+\begin{itemize}
+\item[1.] Au premier chapitre, \textbf{\textit{Généralités sur le traitement automatique du langage naturel}}, nous passons en revu toute la théorie nécessaire à la compréhension de notre travail.
+\item[2.] Au second chapitre, \textbf{\textit{Présentation du résumé automatique et conception de}} \textit{\textbf{l'archi\-tec\-ture du système}}, nous y présentons les aspects du résumé automatique essentiels à notre travail et y concevons pas à pas le système de synthèse automatique des textes dans tous ses aspects (pas uniquement le côté synthèse).
+\item[3.] Au troisième chapitre : \textbf{\textit{Conception finale, réalisation et tests}}, nous y finalisons la conception et expliquons les points importants de l'implémentation en nous basant sur la conception faite, puis nous présentons les résultats des tests que nous avons effectués.
+\end{itemize}
