@@ -1,6 +1,6 @@
 ## 1. Indications
 Ce repo rassemble les fichiers `latex` ayant permis de générer mon travail de fin d'études en ingénierie informatique à l'ULPGL/Goma.  
-Il porte sur la `conception et la réalisation d'un système basé sur l'intelligence artificielle pour résumer automatiquement les textes`.
+Il porte `sur la conception et la réalisation d'un système basé sur l'intelligence artificielle pour résumer automatiquement les textes`.
 
 ## 2. Liens
 Le document est aussi accessible au lien suivant :  
